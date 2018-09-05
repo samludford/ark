@@ -15,8 +15,6 @@ void ofApp::setup(){
 	ofSetFullscreen(Settings::instance()->getFullscreen());
 	ofSetEscapeQuitsApp(false);
 
-    dummyObjects.load("screen.png");
-
     sceneManager.setup("scenes.json", &piMapper);
     
     //ofxMaxim
@@ -25,19 +23,28 @@ void ofApp::setup(){
     ofxMaxiSettings::setup(sampleRate, 2, bufferSize);
     ofSoundStreamSetup(2,2,this, sampleRate, bufferSize, 4);
     
-    // magentManager
+    // Magnet Manager
     magnetManager = new MagnetManager();
-    magnetManager->setPulse(new EmptyPulse());
+    magnetManager->setPulse(new RandomPulse());
     
 }
 
 void ofApp::update(){
 	piMapper.update();
     sceneManager.update();
+    magnetManager -> update();
+    
+    // check whether to shuffle
+    counter++;
+    if(counter > counterMax) {
+        tarotSource -> shuffle();
+        counter = 0;
+        counterMax = floor(ofRandom(500, 1000));
+    }
+    
 }
 
 void ofApp::draw(){
-    dummyObjects.draw(ofGetWidth()/2.0 - dummyObjects.getWidth()/2.0,ofGetHeight()/2.0 - dummyObjects.getHeight()/2.0);
     piMapper.draw();
 }
 

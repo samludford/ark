@@ -15,14 +15,13 @@ int main(int argc, char * argv[]){
 		}
 	}
 	
-//    Settings::instance()->setFullscreen(fullscreen);
-//
-//    ofSetupOpenGL(1000, 700, OF_FULLSCREEN);
-//    ofRunApp(new ofApp());
+    //    Settings::instance()->setFullscreen(fullscreen);
+    //    ofSetupOpenGL(1000, 700, OF_FULLSCREEN);
+    //    ofRunApp(new ofApp());
     
-        // setup for samsung tv
+        // setup for projector
         ofGLFWWindowSettings settingsMain;
-        settingsMain.width = 1920;   // LG monitor resolution
+        settingsMain.width = 1920;   // projector resolution
         settingsMain.height = 1080;
         settingsMain.setPosition(ofVec2f(-1920, 0));
         settingsMain.decorated = false;     // false = get rid of window border

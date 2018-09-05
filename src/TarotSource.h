@@ -10,12 +10,13 @@
 #include "ofMain.h"
 #include "FboSource.h"
 
-#define VID_COUNT 5
+#define VID_COUNT 18
 #define SHUFFLE_LENGTH 120
 #define SHUFFLE_INC 3
 
 #define VID_WIDTH 1920
 #define VID_HEIGHT 1080
+#define PADDING 40
 
 #define SCALE 1
 

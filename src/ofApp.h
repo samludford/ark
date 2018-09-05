@@ -10,6 +10,8 @@
 #include "ofxMaxim.h"
 #include "MagnetManager.h"
 #include "EmptyPulse.h"
+#include "TestPulse.h"
+#include "RandomPulse.h"
 
 class ofApp : public ofBaseApp {
 	public:
@@ -34,6 +36,8 @@ class ofApp : public ofBaseApp {
         void audioOut(float * output, int bufferSize, int nChannels);
         int  bufferSize;
         int  sampleRate;
+        int counter;
+        int counterMax {500};
     
         // magnet manager (class handling communication with the arduino)
         MagnetManager *magnetManager;

@@ -32,6 +32,7 @@ protected:
     void setupArduino(const int & version);
     bool motorState;
     int magnetPins[NUM_MAGNETS];
+    bool magnetStates[NUM_MAGNETS];
     
     // Maximilian
     float tempo;
